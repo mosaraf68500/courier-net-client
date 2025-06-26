@@ -1,12 +1,16 @@
 import React from 'react';
 import CouriereLogo from '../Shared/CouriereLogo';
 import Banner from './Banner/Banner';
+import Services from './Services/Services';
 
 const Home = () => {
     return (
-        <div>
+        <div  className="w-11/12 mx-auto">
           <section className='my-4'>
              <Banner></Banner>
+          </section>
+          <section>
+            <Services></Services>
           </section>
            
         </div>

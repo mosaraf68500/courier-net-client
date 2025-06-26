@@ -7,7 +7,7 @@ import b3 from "../../../assets/banner/banner3.png";
 
 const Banner = () => {
   return (
-    <div className="w-11/12 mx-auto" style={{ overflow: "visible", width: "100%" }}>
+    <div style={{ overflow: "visible", width: "100%" }}>
       <Carousel
         autoPlay
         infiniteLoop
