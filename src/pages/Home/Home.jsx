@@ -2,6 +2,7 @@ import React from 'react';
 import CouriereLogo from '../Shared/CouriereLogo';
 import Banner from './Banner/Banner';
 import Services from './Services/Services';
+import ClientLogo from './clientLogo/ClientLogo';
 
 const Home = () => {
     return (
@@ -11,6 +12,10 @@ const Home = () => {
           </section>
           <section>
             <Services></Services>
+          </section>
+
+          <section>
+            <ClientLogo></ClientLogo>
           </section>
            
         </div>

@@ -68,7 +68,7 @@ const Services = () => {
             <div className="flex justify-center mb-4">
               <div className="bg-gray-100 p-4 rounded-full">{service.icon}</div>
             </div>
-            <h3 className="text-lg font-semibold text-center">{service.title}</h3>
+            <h3 className="text-lg font-semibold text-center text-green-700">{service.title}</h3>
             <p className="mt-2 text-sm text-center text-gray-700">{service.description}</p>
           </div>
         ))}
