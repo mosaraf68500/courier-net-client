@@ -3,6 +3,7 @@ import CouriereLogo from '../Shared/CouriereLogo';
 import Banner from './Banner/Banner';
 import Services from './Services/Services';
 import ClientLogo from './clientLogo/ClientLogo';
+import FeaturesHighLights from './FeaturesHighlights/FeaturesHighLights';
 
 const Home = () => {
     return (
@@ -16,6 +17,10 @@ const Home = () => {
 
           <section>
             <ClientLogo></ClientLogo>
+          </section>
+
+          <section>
+            <FeaturesHighLights></FeaturesHighLights>
           </section>
            
         </div>
