@@ -1,10 +1,13 @@
 import React from 'react';
 import CouriereLogo from '../Shared/CouriereLogo';
+import Banner from './Banner/Banner';
 
 const Home = () => {
     return (
         <div>
-            <h1>this is home</h1>
+          <section className='my-4'>
+             <Banner></Banner>
+          </section>
            
         </div>
     );
