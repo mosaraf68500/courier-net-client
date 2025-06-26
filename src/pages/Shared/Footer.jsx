@@ -1,11 +1,13 @@
 import React from "react";
+import CouriereLogo from "./CouriereLogo";
 
 const Footer = () => {
   return (
     <div>
       <footer class="bg-black text-white px-6 py-10 rounded-2xl text-center">
   <div class="mb-4">
-    <h1 class="text-2xl font-bold text-green-400">Profast</h1>
+    {/* <h1 class="text-2xl font-bold ">Profast</h1> */}
+    <CouriereLogo></CouriereLogo>
     <p class="text-sm mt-2 text-gray-300">
       Enjoy fast, reliable parcel delivery with real-time tracking and zero hassle. From personal packages to<br />
       business shipments — we deliver on time, every time.
