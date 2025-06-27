@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import trackingImg from "../../../assets/live-tracking.png";
 import safeImg from "../../../assets/safe-delivery.png";
-// import supportImg from "../../../assets/features/support.png";
+// import supportImg from "../../../assets/features/support.png"; // Optional: replace with actual image if needed
+
 const features = [
   {
     title: "Live Parcel Tracking",
@@ -19,10 +23,15 @@ const features = [
     title: "24/7 Call Center Support",
     description:
       "Our dedicated support team is available around the clock to assist you with any questions, updates, or delivery concerns—anytime you need us.",
-    img: safeImg,
+    img: safeImg, // Optional: Replace with supportImg if available
   },
 ];
+
 const FeaturesHighLights = () => {
+  useEffect(() => {
+    AOS.init({ once: true, duration: 8000 });
+  }, []);
+
   return (
     <div>
       <div className="bg-gray-100 my-10 py-10 px-4 md:px-16">
@@ -30,6 +39,8 @@ const FeaturesHighLights = () => {
           {features.map((feature, index) => (
             <div
               key={index}
+              data-aos="fade-up"
+              data-aos-delay={index * 200}
               className="bg-white rounded-xl shadow-md p-10 flex flex-col md:flex-row items-center gap-6 hover:shadow-lg transition duration-300"
             >
               <img

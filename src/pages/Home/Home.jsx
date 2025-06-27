@@ -4,6 +4,7 @@ import Banner from './Banner/Banner';
 import Services from './Services/Services';
 import ClientLogo from './clientLogo/ClientLogo';
 import FeaturesHighLights from './FeaturesHighlights/FeaturesHighLights';
+import PrirotySection from './priortySection/PrirotySection';
 
 const Home = () => {
     return (
@@ -21,6 +22,10 @@ const Home = () => {
 
           <section>
             <FeaturesHighLights></FeaturesHighLights>
+          </section>
+
+          <section>
+            <PrirotySection></PrirotySection>
           </section>
            
         </div>
