@@ -105,7 +105,7 @@ const TestimonialSlider = () => {
       />
 
       {/* Title */}
-      <h2 className="text-3xl font-bold text-gray-800 mb-2">
+      <h2 className="text-3xl font-bold text-[#03373D] mb-2">
         What our customers are saying
       </h2>
       <p className="text-gray-500 mb-10 max-w-xl mx-auto text-sm">

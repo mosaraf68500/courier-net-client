@@ -7,6 +7,7 @@ import FeaturesHighLights from './FeaturesHighlights/FeaturesHighLights';
 import PrirotySection from './priortySection/PrirotySection';
 import HowItWorks from '../howItwork/HowItWorks ';
 import TestimonialSlider from './TestimonialSlider/TestimonialSlider';
+import FrequentlyQuestion from './FrequentlyQuestion/FrequentlyQuestion';
 
 const Home = () => {
     return (
@@ -35,6 +36,10 @@ const Home = () => {
           </section>
           <section>
             <TestimonialSlider></TestimonialSlider>
+          </section>
+
+          <section>
+            <FrequentlyQuestion></FrequentlyQuestion>
           </section>
            
         </div>
