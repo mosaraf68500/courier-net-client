@@ -4,7 +4,7 @@ import image from "../../../assets/location-merchant.png"
 const PrirotySection = () => {
   return (
     <div>
-      <section className="bg-[#003c3c] text-white rounded-2xl mb-10 p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-8 relative overflow-hidden">
+      <section className="bg-[#003c3c] bg-[url('assets/be-a-merchant-bg.png')] bg-no-repeat text-white rounded-2xl mb-10 p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-8 relative overflow-hidden">
         {/* Background effect (optional, for wave) */}
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-[#003c3c] to-[#005050] opacity-20 pointer-events-none"></div>
 
