@@ -6,6 +6,7 @@ import ClientLogo from './clientLogo/ClientLogo';
 import FeaturesHighLights from './FeaturesHighlights/FeaturesHighLights';
 import PrirotySection from './priortySection/PrirotySection';
 import HowItWorks from '../howItwork/HowItWorks ';
+import TestimonialSlider from './TestimonialSlider/TestimonialSlider';
 
 const Home = () => {
     return (
@@ -31,6 +32,9 @@ const Home = () => {
 
           <section>
             <PrirotySection></PrirotySection>
+          </section>
+          <section>
+            <TestimonialSlider></TestimonialSlider>
           </section>
            
         </div>
