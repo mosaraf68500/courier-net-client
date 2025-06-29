@@ -1,11 +1,68 @@
-import React from 'react';
+import React from "react";
+import { useForm } from "react-hook-form";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-    return (
-        <div>
-            <h1>this is login</h1>
+
+    const {register,handleSubmit}=useForm();
+    const onSubmit=data=>{
+        console.log(data)
+    }
+  return (
+    <div className="w-full">
+      <h2 className="text-2xl font-bold mb-2">Create an Account</h2>
+      <p className="text-sm text-gray-500 mb-6">Register with Courier-Net</p>
+
+      <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
+        <input
+          type="email"
+          {...register('email')}
+          placeholder="Email"
+          className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+        />
+        <input
+          type="password"
+          {...register('password')}
+          placeholder="Password"
+          className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+        />
+
+        <div className="text-sm text-right">
+          <a href="#" className="text-green-600 hover:underline">
+            Forgot password?
+          </a>
         </div>
-    );
+
+        <button
+          type="submit"
+          className="w-full py-2 bg-lime-400 text-white rounded-md hover:bg-lime-500 transition"
+        >
+          Login
+        </button>
+
+        <p className="text-sm text-center text-gray-600">
+          Already have an account?{" "}
+          <span className="text-green-600 font-semibold cursor-pointer">
+            Login
+          </span>
+        </p>
+
+        <div className="flex items-center justify-center">
+          <hr className="flex-grow border-gray-300" />
+          <span className="px-2 text-gray-400">or</span>
+          <hr className="flex-grow border-gray-300" />
+        </div>
+
+        <button
+          type="button"
+          className="w-full flex items-center justify-center gap-2 py-2 border rounded-md hover:bg-gray-50 transition"
+        >
+          <FcGoogle className="text-xl" />
+          Register with Google
+        </button>
+      </form>
+    </div>
+  );
 };
 
 export default Login;
