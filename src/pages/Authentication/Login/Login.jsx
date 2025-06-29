@@ -3,29 +3,38 @@ import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-
-    const {register,handleSubmit}=useForm();
-    const onSubmit=data=>{
-        console.log(data)
-    }
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+  };
   return (
     <div className="w-full">
-      <h2 className="text-2xl font-bold mb-2">Create an Account</h2>
-      <p className="text-sm text-gray-500 mb-6">Register with Courier-Net</p>
+      <h2 className="text-2xl font-bold mb-2">Login an Account</h2>
+      <p className="text-sm text-gray-500 mb-6">Login with Courier-Net</p>
 
       <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
         <input
           type="email"
-          {...register('email')}
+          {...register("email")}
           placeholder="Email"
           className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
         />
         <input
           type="password"
-          {...register('password')}
+          {...register("password", { required: true, minLength: 6 })}
           placeholder="Password"
           className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
         />
+        {
+        errors.password?.type==="required" &&<p className="text-red-500">password is required!</p>
+        }
+        {
+            errors.password?.type==="minLength"&& <p className="text-red-500">password is minimum length 6</p>
+        }
 
         <div className="text-sm text-right">
           <a href="#" className="text-green-600 hover:underline">
@@ -41,9 +50,9 @@ const Login = () => {
         </button>
 
         <p className="text-sm text-center text-gray-600">
-          Already have an account?{" "}
+          Do,t have an account?
           <span className="text-green-600 font-semibold cursor-pointer">
-            Login
+            Register Now
           </span>
         </p>
 
@@ -58,7 +67,7 @@ const Login = () => {
           className="w-full flex items-center justify-center gap-2 py-2 border rounded-md hover:bg-gray-50 transition"
         >
           <FcGoogle className="text-xl" />
-          Register with Google
+          Login with Google
         </button>
       </form>
     </div>
