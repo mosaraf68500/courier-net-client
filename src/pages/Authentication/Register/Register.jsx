@@ -1,8 +1,11 @@
-import React from "react";
+import { use } from "react";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../../../contex/AuthContex/AuthContex";
 
 const Register = () => {
+  const {name}=use(AuthContext)
+  console.log(name)
   const {
     register,
     handleSubmit,
