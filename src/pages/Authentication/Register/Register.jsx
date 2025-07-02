@@ -1,19 +1,28 @@
-import { use } from "react";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
-import { AuthContext } from "../../../contex/AuthContex/AuthContex";
+import AuthContexHook from "../../../Hooks/AuthContexHook";
 
 const Register = () => {
-  const {name}=use(AuthContext)
-  console.log(name)
+  const {CreateUserWithEmailAndPassword}=AuthContexHook();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+
+  // create user--------------------
   const onSubmit = (data) => {
-    console.log(data);
+    CreateUserWithEmailAndPassword(data.email,data.password)
+    .then(result=>{
+      console.log(result)
+    })
+    .catch(error=>{
+      console.log(error);
+    })
   };
+
+  // ---------------------------
   return (
     <div>
       <div className="w-full">
