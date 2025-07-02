@@ -1,6 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router";
+import SocialLogin from "../../SocialLogin/SocialLogin";
 
 const Login = () => {
   const {
@@ -52,23 +54,12 @@ const Login = () => {
         <p className="text-sm text-center text-gray-600">
           Do,t have an account?
           <span className="text-green-600 font-semibold cursor-pointer">
-            Register Now
+          <Link to="/register">  Register Now</Link>
           </span>
         </p>
 
-        <div className="flex items-center justify-center">
-          <hr className="flex-grow border-gray-300" />
-          <span className="px-2 text-gray-400">or</span>
-          <hr className="flex-grow border-gray-300" />
-        </div>
-
-        <button
-          type="button"
-          className="w-full flex items-center justify-center gap-2 py-2 border rounded-md hover:bg-gray-50 transition"
-        >
-          <FcGoogle className="text-xl" />
-          Login with Google
-        </button>
+        
+       <SocialLogin></SocialLogin>
       </form>
     </div>
   );
