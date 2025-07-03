@@ -4,6 +4,7 @@ import AuthContexHook from "../../Hooks/AuthContexHook";
 
 const SocialLogin = () => {
     const {LoginWithGoogle}=AuthContexHook()
+   
     const handleGoogleLogin=()=>{
 
         LoginWithGoogle()
@@ -24,7 +25,7 @@ const SocialLogin = () => {
       </div>
       <button onClick={handleGoogleLogin}
         type="button"
-        className="w-full flex items-center justify-center gap-2 py-2 border rounded-md hover:bg-gray-50 transition"
+        className="w-full cursor-pointer flex items-center justify-center gap-2 py-2 border rounded-md hover:bg-gray-50 transition"
       >
         <FcGoogle className="text-xl" />
         Login with Google

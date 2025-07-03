@@ -3,15 +3,25 @@ import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router";
 import SocialLogin from "../../SocialLogin/SocialLogin";
+import AuthContexHook from "../../../Hooks/AuthContexHook";
+import { CgLogOff } from "react-icons/cg";
 
 const Login = () => {
+  const {SignInUserWithEmailAndPassword}=AuthContexHook();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    SignInUserWithEmailAndPassword(data.email,data.password)
+    .then(result=>{
+      console.log(result)
+    })
+    .catch(error=>{
+      console.log(error)
+    })
+    
   };
   return (
     <div className="w-full">
