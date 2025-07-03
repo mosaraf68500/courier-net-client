@@ -20,7 +20,8 @@ export const router = createBrowserRouter([
       },
       {
         path:"/sendParcel",
-        Component:SendParcel
+        Component:SendParcel,
+        loader: () => fetch("./districData.json"),
       }
     ],
   },
