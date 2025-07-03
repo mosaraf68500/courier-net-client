@@ -6,6 +6,8 @@ import Login from "../pages/Authentication/Login/Login";
 import Register from "../pages/Authentication/Register/Register";
 import Covarage from "../pages/Coverage/Coverage";
 import SendParcel from "../pages/sendParcel/SendParcel";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
+import DashBoard from "../Layouts/DashBoardLayout/DashBoard";
 
 export const router = createBrowserRouter([
   {
@@ -20,7 +22,7 @@ export const router = createBrowserRouter([
       },
       {
         path:"/sendParcel",
-        Component:SendParcel,
+        element:<PrivateRoutes><SendParcel></SendParcel></PrivateRoutes>,
         loader: () => fetch("./districData.json"),
       }
     ],
@@ -39,4 +41,14 @@ export const router = createBrowserRouter([
       },
     ],
   },
+
+  {
+    path:"dashboard",
+    element:<PrivateRoutes>
+      <DashBoard></DashBoard>
+    </PrivateRoutes>,
+    children:[
+
+    ]
+  }
 ]);

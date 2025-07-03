@@ -1,19 +1,23 @@
 import React from 'react';
+import { Navigate } from 'react-router'; // ✅ যদি আপনি React Router v6+ ব্যবহার করেন
 import AuthContexHook from '../Hooks/AuthContexHook';
-import { Navigate } from 'react-router';
 
-const PrivateRoutes = ({children}) => {
+const PrivateRoutes = ({ children }) => {
+  const { user, loading } = AuthContexHook();
 
-    const {user,loading}=AuthContexHook();
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <span className="loading loading-spinner loading-xl"></span>
+      </div>
+    );
+  }
 
-    if(loading){
-        return <span className="loading loading-spinner loading-xl"></span>
-    }
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
 
-    if(!user){
-        return <Navigate to="/login"></Navigate>
-    }
-    return children
+  return children;
 };
 
 export default PrivateRoutes;
