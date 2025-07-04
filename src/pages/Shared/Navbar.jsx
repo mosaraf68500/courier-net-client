@@ -4,11 +4,11 @@ import CouriereLogo from "./CouriereLogo";
 import AuthContexHook from "../../Hooks/AuthContexHook";
 
 const Navbar = () => {
-  const { user, logOut } = AuthContexHook();
+  const { user, SignOutUser } = AuthContexHook();
 
   const handleLogOut = async () => {
     try {
-      await logOut();
+      await SignOutUser();
       // Optional: success toast or redirect
     } catch (error) {
       console.error("Logout failed:", error);

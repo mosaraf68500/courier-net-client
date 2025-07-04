@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router";
 import RootLayout from "../Layouts/RootLayout";
 import Home from "../pages/Home/Home";
-import AuthLayOuts from "../Layouts/AuthLayOuts";
 import Login from "../pages/Authentication/Login/Login";
 import Register from "../pages/Authentication/Register/Register";
 import Covarage from "../pages/Coverage/Coverage";
@@ -17,43 +16,42 @@ export const router = createBrowserRouter([
     children: [
       { index: true, Component: Home },
       {
-        path: "/coverage",
+        path: "coverage",
         Component: Covarage,
         loader: () => fetch("./districData.json"),
       },
       {
-        path:"/sendParcel",
-        element:<PrivateRoutes><SendParcel></SendParcel></PrivateRoutes>,
+        path: "sendParcel",
+        element: (
+          <PrivateRoutes>
+            <SendParcel />
+          </PrivateRoutes>
+        ),
         loader: () => fetch("./districData.json"),
-      }
-    ],
-  },
-  {
-    path: "/",
-    Component: AuthLayOuts,
-    children: [
+      },
       {
-        path: "/login",
+        path: "login",
         Component: Login,
       },
       {
-        path: "/register",
+        path: "register",
         Component: Register,
       },
     ],
   },
 
   {
-    path:"dashboard",
-    element:<PrivateRoutes>
-      <DashBoard></DashBoard>
-    </PrivateRoutes>,
-    children:[
+    path: "dashboard",
+    element: (
+      <PrivateRoutes>
+        <DashBoard />
+      </PrivateRoutes>
+    ),
+    children: [
       {
-        path:"my-parcel",
-        Component:MyParcels
-      }
-
-    ]
-  }
+        path: "myParcels",
+        Component: MyParcels,
+      },
+    ],
+  },
 ]);

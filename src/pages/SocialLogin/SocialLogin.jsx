@@ -1,15 +1,20 @@
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import AuthContexHook from "../../Hooks/AuthContexHook";
+import { Navigate, useLocation, useNavigate } from "react-router";
 
 const SocialLogin = () => {
     const {LoginWithGoogle}=AuthContexHook()
+      const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from || "/";
    
     const handleGoogleLogin=()=>{
 
         LoginWithGoogle()
        .then(result => {
             console.log("Google Login Success:", result);
+            navigate(from)
         })
         .catch(error => {
             console.error("Google Login Failed:", error);

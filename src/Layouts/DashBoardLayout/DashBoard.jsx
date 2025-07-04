@@ -1,5 +1,6 @@
 import React from "react";
-import { Outlet } from "react-router";
+import { NavLink, Outlet } from "react-router";
+import CouriereLogo from "../../pages/Shared/CouriereLogo";
 
 const DashBoard = () => {
   return (
@@ -47,12 +48,13 @@ const DashBoard = () => {
         {/* Sidebar */}
         <div className="drawer-side">
           <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
+          <CouriereLogo></CouriereLogo>
           <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
             <li>
-              <a>Sidebar Item 1</a>
+             <NavLink>Home</NavLink>
             </li>
             <li>
-              <a>Sidebar Item 2</a>
+             <NavLink to="/dashboard/myParcels">Parcels</NavLink>
             </li>
           </ul>
         </div>

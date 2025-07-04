@@ -1,9 +1,10 @@
 import React from 'react';
-import { Navigate } from 'react-router'; // ✅ যদি আপনি React Router v6+ ব্যবহার করেন
+import { Navigate, useLocation } from 'react-router';
 import AuthContexHook from '../Hooks/AuthContexHook';
 
 const PrivateRoutes = ({ children }) => {
   const { user, loading } = AuthContexHook();
+  const location = useLocation();
 
   if (loading) {
     return (
@@ -14,7 +15,7 @@ const PrivateRoutes = ({ children }) => {
   }
 
   if (!user) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/login" state={{ from: location.pathname }} replace />;
   }
 
   return children;
